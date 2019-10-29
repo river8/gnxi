@@ -1,0 +1,17 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.11 b4:96:91:23:1e:d6
+
+create host-interface name veth1
+set int state host-veth1 up
+set int ip address host-veth1 172.16.1.1/24
+set ip arp host-veth1 172.16.1.2 d6:4b:87:30:6a:60
+
+set int promiscuous on host-veth1
+
+ip route add 172.16.2.2/24 via 10.10.10.11 eth0
+
+

@@ -1,0 +1,7 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.11 b4:96:91:23:1e:d6
+
+set int state eth1 up

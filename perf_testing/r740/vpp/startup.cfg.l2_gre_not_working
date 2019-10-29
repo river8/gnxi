@@ -1,0 +1,22 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.11 b4:96:91:23:1e:d6
+
+create host-interface name veth1
+set int state host-veth1 up
+set ip arp host-veth1 172.16.1.1 d6:4b:87:30:6a:60
+
+create gre tunnel src 10.10.10.10 dst 10.10.10.11 teb
+set int state gre0 up
+
+create bridge-domain 1
+set interface l2 bridge gre0 1
+set interface l2 bridge host-veth1 1
+
+ipsec sa add 1 spi 255128 esp tunnel-src 10.10.10.10 tunnel-dst 10.10.10.11 crypto-key 2b7e151628aed2a6abf7158809cf4f3d2b7e151628aed2a6abf7158809cf4f3d crypto-alg aes-gcm-256
+ipsec sa add 2 spi 255129 esp tunnel-src 10.10.10.11 tunnel-dst 10.10.10.10 crypto-key 2b7e151628aed2a6abf7158809cf4f3d2b7e151628aed2a6abf7158809cf4f3d crypto-alg aes-gcm-256
+
+ipsec tunnel protect gre0 sa-in 2 sa-out 1
