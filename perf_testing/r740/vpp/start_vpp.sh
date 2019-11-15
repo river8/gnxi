@@ -1,6 +1,10 @@
 ifconfig eno2 down
 ip addr flush dev eno2
 
+#ip netns add ns1
+#ip link set eno2 netns ns1
+#ip netns exec ns1 ifconfig eno2 up
+
 ifconfig eno4 down
 ip addr flush dev eno4
 

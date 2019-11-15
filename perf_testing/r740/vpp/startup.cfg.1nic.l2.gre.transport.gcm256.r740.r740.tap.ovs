@@ -1,0 +1,26 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.11 24:6e:96:b6:6e:2a
+
+create tap host-ns ns1 host-if-name tap0 rx-ring-size 4096 tx-ring-size 4096
+set int state tap0 up
+
+create gre tunnel src 10.10.10.10 dst 10.10.10.11 teb
+set int state gre0 up
+
+create bridge-domain 1
+set interface l2 bridge gre0 1
+set interface l2 bridge tap0 1
+
+ipsec spd add 1
+set interface ipsec spd eth0 1
+
+ipsec sa add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
+ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
+
+ipsec policy add spd 1 priority 90 inbound action protect sa 2 local-ip-range 10.10.10.10-10.10.10.10 remote-ip-range 10.10.10.11-10.10.10.11
+ipsec policy add spd 1 priority 90 outbound action protect sa 1 local-ip-range 10.10.10.10-10.10.10.10 remote-ip-range 10.10.10.11-10.10.10.11
+
+trace add dpdk-input 10
