@@ -1,1 +1,1 @@
-stty rows 40 cols 150
+stty rows 42 cols 170
