@@ -1,0 +1,30 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.10 36:bb:ac:4f:54:79
+
+create host-interface name veth1
+set int state host-veth1 up
+set int ip address host-veth1 172.16.2.1/24
+set ip arp host-veth1 172.16.2.2 d6:4b:87:30:6a:61
+
+ip route add 172.16.1.2/24 via 10.10.10.10 eth0
+
+ipsec spd add 1
+set interface ipsec spd eth0 1
+
+comment {
+ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
+ipsec sa 0.0.0.0-255.255.255.255add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
+}
+
+ipsec sa add 2 spi 255128 esp crypto-key 2b7e151628aed2a6abf7158809cf4f3d2b7e151628aed2a6abf7158809cf4f3d crypto-alg aes-cbc-256 integ-key 6867666568676665686766656867666568676669 integ-alg sha1-96
+ipsec sa add 1 spi 255129 esp crypto-key 2b7e151628aed2a6abf7158809cf4f3d2b7e151628aed2a6abf7158809cf4f3d crypto-alg aes-cbc-256 integ-key 6867666568676665686766656867666568676669 integ-alg sha1-96
+
+ipsec policy add spd 1 priority 90 inbound action protect sa 1 local-ip-range 172.16.2.1-172.16.2.2 remote-ip-range 172.16.1.1-172.16.1.2
+ipsec policy add spd 1 priority 90 outbound action protect sa 2 local-ip-range 172.16.2.1-172.16.2.2 remote-ip-range 172.16.1.1-172.16.1.2
+
+trace add dpdk-input 10
+trace add af-packet-input 10

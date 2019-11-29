@@ -2,7 +2,7 @@ set int state eth0 up
 set int ip address eth0 10.10.10.11/24
 set int promiscuous on eth0
 
-set ip arp eth0 10.10.10.10 24:6e:96:b4:b2:07
+set ip arp eth0 10.10.10.10 36:bb:ac:4f:54:79
 
 set int state eth1 up
 set int promiscuous on eth1
@@ -13,3 +13,5 @@ set int state gre0 up
 create bridge-domain 1
 set interface l2 bridge gre0 1
 set interface l2 bridge eth1 1
+
+trace add dpdk-input 5

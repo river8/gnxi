@@ -1,0 +1,27 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+
+set int promiscuous on eth0
+
+set ip arp eth0 10.10.10.10 36:bb:ac:4f:54:79
+
+create host-interface name veth1
+set int state host-veth1 up
+set int ip address host-veth1 172.16.2.1/24
+set ip arp host-veth1 172.16.2.2 d6:4b:87:30:6a:61
+
+ikev2 profile add pr1
+ikev2 profile set pr1 auth rsa-sig cert-file /home/esdn/gnxi/perf_testing/r740_2/vpp/certs/server-cert.pem
+set ikev2 local key /home/esdn/gnxi/perf_testing/r740_2/vpp/certs/client-key.pem
+ikev2 profile set pr1 id local fqdn srv-2
+ikev2 profile set pr1 id remote fqdn srv-1
+ikev2 profile set pr1 traffic-selector local ip-range 172.16.2.1-172.16.2.255 port-range 0 - 65535 protocol 0
+ikev2 profile set pr1 traffic-selector remote ip-range 172.16.1.1-172.16.1.255 port-range 0 - 65535 protocol 0
+
+ikev2 profile set pr1 responder eth0 10.10.10.10
+ikev2 profile set pr1 ike-crypto-alg aes-gcm-16 256  ike-integ-alg sha1-96  ike-dh modp-2048
+ikev2 profile set pr1 esp-crypto-alg aes-gcm-16 256  esp-integ-alg sha1-96  esp-dh ecp-256
+ikev2 profile set pr1 sa-lifetime 3600 10 5 0
+
+trace add dpdk-input 10
+trace add af-packet-input 10
