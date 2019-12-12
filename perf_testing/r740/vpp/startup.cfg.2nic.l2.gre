@@ -13,3 +13,5 @@ set int state gre0 up
 create bridge-domain 1
 set interface l2 bridge gre0 1
 set interface l2 bridge eth1 1
+
+trace add dpdk-input 5

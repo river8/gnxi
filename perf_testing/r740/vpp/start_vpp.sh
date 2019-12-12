@@ -5,8 +5,11 @@ ip addr flush dev eno2
 #ip link set eno2 netns ns1
 #ip netns exec ns1 ifconfig eno2 up
 
-ifconfig eno4 down
-ip addr flush dev eno4
+#ifconfig eno4 down
+#ip addr flush dev eno4
+
+ifconfig enp27s16f1 down
+ip addr flush dev enp27s16f1
 
 service vpp stop
 
