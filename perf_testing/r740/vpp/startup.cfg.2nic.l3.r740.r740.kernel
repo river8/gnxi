@@ -1,0 +1,12 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+
+set int state eth1 up
+set ip neighbor eth0 10.10.10.11 24:6e:96:b6:6e:2a
+set int ip address eth1 20.20.20.20/24
+
+ip route add 192.16.2.2/24 via 10.10.10.11 eth0
+ip route add 30.30.30.0/24 via 10.10.10.11 eth0
+ip route add 192.16.1.2/24 via 20.20.20.21 eth1
+
+trace add dpdk-input 10

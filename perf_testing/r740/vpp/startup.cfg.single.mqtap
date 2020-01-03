@@ -17,8 +17,8 @@ set interface l2 bridge tap0 1
 ipsec spd add 1
 set interface ipsec spd eth0 1
 
-ipsec sa add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
-ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256
+ipsec sa add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
 
 ipsec policy add spd 1 priority 90 inbound action protect sa 2 local-ip-range 10.10.10.10-10.10.10.10 remote-ip-range 10.10.10.11-10.10.10.11
 ipsec policy add spd 1 priority 90 outbound action protect sa 1 local-ip-range 10.10.10.10-10.10.10.10 remote-ip-range 10.10.10.11-10.10.10.11
