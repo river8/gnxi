@@ -20,8 +20,12 @@ ikev2 profile set pr1 auth rsa-sig cert-file /home/esdn/gnxi/perf_testing/r740_2
 set ikev2 local key /home/esdn/gnxi/perf_testing/r740_2/vpp/certs/client-key.pem
 ikev2 profile set pr1 id local fqdn srv-2
 ikev2 profile set pr1 id remote fqdn srv-1
+comment {
 ikev2 profile set pr1 traffic-selector local ip-range 10.10.10.11-10.10.10.11 port-range 0 - 65535 protocol 0
 ikev2 profile set pr1 traffic-selector remote ip-range 10.10.10.10-10.10.10.10 port-range 0 - 65535 protocol 0
+}
+ikev2 profile set pr1 traffic-selector local ip-range 172.16.1.1-172.16.1.1 port-range 0 - 65535 protocol 0
+ikev2 profile set pr1 traffic-selector remote ip-range 172.16.1.2-172.16.1.2 port-range 0 - 65535 protocol 0
 
 ikev2 profile set pr1 responder eth0 10.10.10.10
 ikev2 profile set pr1 ike-crypto-alg aes-gcm-16 256  ike-integ-alg sha1-96  ike-dh modp-2048
