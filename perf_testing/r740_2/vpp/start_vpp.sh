@@ -1,10 +1,12 @@
-ifconfig eno2 down
-ip addr flush dev eno2
+rmmod i40e; modprobe i40e
+modprobe uio_pci_generic
+modprobe vfio_pci
+
+ifconfig enp59s0f3 down
+ip addr flush dev enp59s0f3
 
 ifconfig eno3 down
 ip addr flush dev eno3
-
-service vpp stop
 
 mkdir -p /tmp/dumps
 sysctl -w debug.exception-trace=1
