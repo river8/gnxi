@@ -6,18 +6,13 @@ set int state eth1 up
 set int ip address eth1 20.20.20.20/24
 ip route add 40.40.40.0/24 via 20.20.20.21 eth1
 
-create loopback interface
-set int ip address loop0 1.1.1.1/32
-set int state loop0 up
-ip route add 2.2.2.2/32 via 10.10.10.11
-
-create ipip tunnel src 1.1.1.1 dst 2.2.2.2
+create ipip tunnel src 10.10.10.10 dst 10.10.10.11
 set int state ipip0 up
 set int ip address ipip0 70.70.70.70/24
-ip route add 30.30.30.0/24 via 70.70.70.71
+ip route add 30.30.30.0/24 via 70.70.70.70 ipip0
 
 ipsec sa add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
 ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
-ipsec tunnel protect ipip0 sa-in 2 sa-out 1
 
+ipsec tunnel protect ipip0 sa-in 2 sa-out 1
 trace add dpdk-input 10

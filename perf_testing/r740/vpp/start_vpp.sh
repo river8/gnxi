@@ -1,17 +1,12 @@
-ifconfig eno2 down
-ip addr flush dev eno2
+rmmod i40e; modprobe i40e
+modprobe uio_pci_generic
+modprobe vfio_pci
 
-#ip netns add ns1
-#ip link set eno2 netns ns1
-#ip netns exec ns1 ifconfig eno2 up
+ifconfig eno4 down
+ip addr flush dev eno4
 
-#ifconfig eno4 down
-#ip addr flush dev eno4
-
-ifconfig enp27s16f1 down
-ip addr flush dev enp27s16f1
-
-service vpp stop
+ifconfig enp59s0f3 down
+ip addr flush dev enp59s0f3
 
 mkdir -p /tmp/dumps
 sysctl -w debug.exception-trace=1

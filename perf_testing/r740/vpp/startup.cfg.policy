@@ -1,0 +1,27 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.10/24
+
+set int state eth1 up
+set ip neighbor eth0 10.10.10.11 24:6e:96:b6:6e:2a
+set int ip address eth1 20.20.20.20/24
+
+comment {
+ip route add 192.16.2.2/24 via 10.10.10.11 eth0
+ip route add 192.16.1.2/24 via 20.20.20.21 eth1
+}
+ip route add 30.30.30.0/24 via 10.10.10.11 eth0
+ip route add 40.40.40.0/24 via 20.20.20.21 eth1
+
+ipsec spd add 1
+set interface ipsec spd eth0 1
+
+ipsec sa add 1 spi 255129 esp tunnel-src 10.10.10.10 tunnel-dst 10.10.10.11 crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec sa add 2 spi 255128 esp tunnel-src 10.10.10.11 tunnel-dst 10.10.10.10 crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+
+ipsec policy add spd 1 outbound priority 90 protocol 50 action bypass local-ip-range 0.0.0.0-255.255.255.255 remote-ip-range 0.0.0.0-255.255.255.255
+ipsec policy add spd 1 inbound priority 90 protocol 50 action bypass local-ip-range 0.0.0.0-255.255.255.255 remote-ip-range 0.0.0.0-255.255.255.255
+
+ipsec policy add spd 1 priority 10 inbound action protect sa 2 local-ip-range 0.0.0.0-255.255.255.255 remote-ip-range 0.0.0.0-255.255.255.255
+ipsec policy add spd 1 priority 10 outbound action protect sa 1 local-ip-range 0.0.0.0-255.255.255.255 remote-ip-range 0.0.0.0-255.255.255.255
+
+trace add dpdk-input 10
