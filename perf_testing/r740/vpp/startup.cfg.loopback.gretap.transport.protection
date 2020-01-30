@@ -3,12 +3,6 @@ set int ip address eth0 10.10.10.10/24
 set ip neighbor eth0 10.10.10.11 24:6e:96:b6:6e:2a
 
 set int state eth1 up
-create sub-interfaces eth1 100 
-set interface l2 tag-rewrite eth1.100 pop 1
-set int state eth1.100 up
-create sub-interfaces eth1 200
-set int ip address eth1.200 3.3.3.3/24
-set int state eth1.200 up
 
 create loopback interface
 set int ip address loop0 1.1.1.1/32
@@ -20,7 +14,7 @@ set int state gre0 up
 
 create bridge-domain 1
 set interface l2 bridge gre0 1
-set interface l2 bridge eth1.100 1
+set interface l2 bridge eth1 1
 
 ipsec sa add 1 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
 ipsec sa add 2 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678

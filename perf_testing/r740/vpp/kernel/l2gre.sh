@@ -16,6 +16,10 @@ ip netns exec ns1 sysctl -w net.ipv4.ip_forward=1
 ip netns exec ns1 ip link add gre1 type gretap local 40.40.40.40 remote 30.30.30.31 dev enp59s0f0 ttl 32
 ip netns exec ns1 ip link add gre2 type gretap local 40.40.40.41 remote 30.30.30.31 dev enp59s0f0 ttl 32
 
+ip netns exec ns1 ethtool -G eno0 tx 4096 rx 4096
+ip netns exec ns1 ethtool -X eno2 weight 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ip netns exec ns1 ethtool -G enp59s0f0 tx 4096 rx 4096
 ip netns exec ns1 ethtool -K enp59s0f0 ntuple on
 ip netns exec ns1 ethtool -U enp59s0f0 flow-type ip4 dst-ip 40.40.40.40 action 8
 ip netns exec ns1 ethtool -U enp59s0f0 flow-type ip4 dst-ip 40.40.40.41 action 10
