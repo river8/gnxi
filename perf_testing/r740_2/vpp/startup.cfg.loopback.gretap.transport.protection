@@ -1,0 +1,23 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+set ip neighbor eth0 10.10.10.10 24:6e:96:b4:b2:07
+
+set int state eth1 up
+
+create loopback interface
+set int ip address loop0 2.2.2.2/32
+set int state loop0 up
+ip route add 1.1.1.1/32 via 10.10.10.10
+
+create gre tunnel src 2.2.2.2 dst 1.1.1.1 teb
+set int state gre0 up
+
+create bridge-domain 1
+set interface l2 bridge gre0 1
+set interface l2 bridge eth1 1
+
+ipsec sa add 1 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec sa add 2 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec tunnel protect gre0 sa-in 2 sa-out 1
+
+trace add dpdk-input 10
