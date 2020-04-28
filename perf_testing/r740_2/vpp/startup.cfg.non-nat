@@ -1,0 +1,37 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+
+comment{
+comment{In case of not-nat, remote dst ip shall be the ipsec endpoint address
+on initiator.}
+create gre tunnel src 10.10.10.11 dst 10.10.10.10 teb
+}
+comment{In case of nat, remote dst ip shall be the natted public ip.}
+create gre tunnel src 10.10.10.11 dst 10.10.10.10 teb
+
+comment{
+set int state eth1 up
+}
+create host-interface name veth0
+set int state host-veth0 up
+
+create bridge-domain 1
+set interface l2 bridge gre0 1
+set interface l2 bridge host-veth0 1
+comment{
+set interface l2 bridge eth1 1
+}
+
+set ikev2 local key secrets/srv-2-key.pem
+ikev2 set liveness 30 4
+
+ikev2 profile add pr1
+ikev2 profile set pr1 tunnel gre0
+ikev2 profile set pr1 auth rsa-sig cert-file secrets/srv-1-cert.pem
+ikev2 profile set pr1 id remote fqdn srv-1
+ikev2 profile set pr1 id local fqdn srv-2
+ikev2 profile set pr1 traffic-selector remote ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
+ikev2 profile set pr1 traffic-selector local ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0

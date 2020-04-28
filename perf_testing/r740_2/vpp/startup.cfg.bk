@@ -1,0 +1,18 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+set ip neighbor eth0 10.10.10.10 24:6e:96:b4:b2:07
+
+set int state eth1 up
+set int ip address eth1 30.30.30.30/24
+
+create ipip tunnel src 10.10.10.11 dst 10.10.10.10
+set int state ipip0 up
+set int ip address ipip0 80.80.80.80/24
+ip route add 40.40.40.0/24 via 80.80.80.80 ipip0
+ip route add 20.20.20.0/24 via 80.80.80.80 ipip0
+
+ipsec sa add 1 spi 255128 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec sa add 2 spi 255129 esp crypto-key 0123456789012345678901234567890101234567890123456789012345678901 crypto-alg aes-gcm-256 salt 0x12345678
+ipsec tunnel protect ipip0 sa-in 2 sa-out 1
+
+trace add dpdk-input 10
