@@ -1,0 +1,49 @@
+unix {
+  startup-config startup.cfg
+  nodaemon
+  cli-no-banner
+  cli-no-pager
+  cli-prompt srv-1-vpp#
+  cli-listen /run/vpp/cli.sock
+  log vpp.log
+  full-coredump
+}
+
+cpu {
+  main-core 2
+  corelist-workers 4,6
+}
+
+dpdk {
+  socket-mem 2048,0
+  log-level debug
+  no-tx-checksum-offload
+  dev default{
+    num-tx-desc 512
+    num-rx-desc 512
+    # num-rx-queues 2
+  }
+  dev 0000:1b:00.1 {
+    # pf of eno4
+    workers 0
+    name eth0
+  }
+  dev 0000:1b:10.0 {
+    # one vf of eno3: enp27s16
+    workers 1
+    name eth1
+  }
+  # Use aesni mb lib.
+  # vdev crypto_aesni_mb0,socket_id=0
+  # Use qat VF pcie addresses.
+#  dev 0000:3d:01.0
+  no-multi-seg
+}
+
+ip {
+  heap-size 4G
+}
+
+statseg {
+  size 4G
+}

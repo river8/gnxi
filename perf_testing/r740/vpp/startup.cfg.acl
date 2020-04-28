@@ -3,6 +3,11 @@ set int ip address eth0 10.10.10.10/24
 ip route add 0.0.0.0/0 via 10.10.10.11
 
 comment{
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+}
+
+comment{
 comment{interface connected to ixia}
 set int state eth1 up
 }

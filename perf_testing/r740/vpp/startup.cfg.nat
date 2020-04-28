@@ -9,6 +9,9 @@ set int state eth1 up
 create host-interface name veth3
 set int state host-veth3 up
 
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+
 create gre tunnel src 10.10.10.10 dst 20.20.20.21 teb
 
 create host-interface name veth1
@@ -43,5 +46,3 @@ ikev2 profile set pr1 ike-crypto-alg aes-gcm-16 256 ike-integ-alg sha1-96 ike-dh
 ikev2 profile set pr1 esp-crypto-alg aes-gcm-16 256 esp-integ-alg sha1-96 esp-dh ecp-256
 ikev2 profile set pr1 sa-lifetime 300 10 5 0
 ikev2 initiate sa-init pr1
-
-trace add dpdk-input 10
