@@ -1,0 +1,1090 @@
+# tcpdump -lenvvi enp59s0f0 udp
+tcpdump: listening on enp59s0f0, link-type EN10MB (Ethernet), capture size 262144 bytes
+16:30:11.654425 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 3f797f338537cc31->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(af8093384b738409909c5d38818b9390c2620fb7b18dcf21540e89762b51b234) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:30:11.658614 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(ff1ec8e883710e92d8a03b4f717cfe85e2160ebf054c6b7572b0aff2baea0688) )
+16:30:11.661919 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:30:11.663198 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:30:12.660281 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[I]:
+    (v2e: len=44)
+16:30:12.660425 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[R]:
+    (v2e: len=44)
+16:30:42.697014 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000003 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[I]:
+    (v2e: len=44)
+16:31:12.724826 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000004 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[I]:
+    (v2e: len=44)
+16:31:42.740492 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000005 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:12.750641 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000006 cookie 3f797f338537cc31->234eb9fbd6d2d0bc: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:13.745843 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6926871fef4481fb->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(d5f864f5be126d5618af0733f118b7c8ba4e6dd96e85fb3c9732712376430bf4) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:13.745869 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6926871fef4481fb->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(d5f864f5be126d5618af0733f118b7c8ba4e6dd96e85fb3c9732712376430bf4) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:13.749927 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6926871fef4481fb->3ff40d00ac3501d1: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(e7fb02ed5693d2883d6183339dcf60abb26d4f09c848aaa87e6a26c2664ab7ea) )
+16:32:13.749933 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6926871fef4481fb->3ff40d00ac3501d1: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(e7fb02ed5693d2883d6183339dcf60abb26d4f09c848aaa87e6a26c2664ab7ea) )
+16:32:13.752781 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 6926871fef4481fb->3ff40d00ac3501d1: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:13.754045 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 6926871fef4481fb->3ff40d00ac3501d1: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:14.749013 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 6926871fef4481fb->3ff40d00ac3501d1: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:14.749036 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6d4984758803966e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(d1693b42aa44fd9c52a3229482845f670005795ef4d2f497b614b9a13543ec5d) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:14.749038 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6d4984758803966e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(d1693b42aa44fd9c52a3229482845f670005795ef4d2f497b614b9a13543ec5d) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:14.749076 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 6926871fef4481fb->3ff40d00ac3501d1: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:14.753147 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6d4984758803966e->3e8d1ea0dce54c6f: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(8f24d04e1322145d4bee165460499db1f7aff4a3ffdfa4585962a20eb409789b) )
+16:32:14.753149 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 6d4984758803966e->3e8d1ea0dce54c6f: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(8f24d04e1322145d4bee165460499db1f7aff4a3ffdfa4585962a20eb409789b) )
+16:32:14.755853 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 6d4984758803966e->3e8d1ea0dce54c6f: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:14.756596 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 6d4984758803966e->3e8d1ea0dce54c6f: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:15.753204 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 6d4984758803966e->3e8d1ea0dce54c6f: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:15.753228 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie f1f19ea2a3f2659b->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(ef5a7cd9d616227da6992f58ca9221b477175878b7bdff83e062ee7d574c4ab7) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:15.753230 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie f1f19ea2a3f2659b->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(ef5a7cd9d616227da6992f58ca9221b477175878b7bdff83e062ee7d574c4ab7) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:15.753258 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 6d4984758803966e->3e8d1ea0dce54c6f: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:15.757211 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie f1f19ea2a3f2659b->b225f0273662d4ed: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(fbf06a776be6e1bc47035250e1ef65800beb14ace606a5862f27b66a23c7d915) )
+16:32:15.757213 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie f1f19ea2a3f2659b->b225f0273662d4ed: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(fbf06a776be6e1bc47035250e1ef65800beb14ace606a5862f27b66a23c7d915) )
+16:32:15.759916 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie f1f19ea2a3f2659b->b225f0273662d4ed: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:15.760659 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie f1f19ea2a3f2659b->b225f0273662d4ed: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:16.746381 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie f1f19ea2a3f2659b->b225f0273662d4ed: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:16.746407 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie de89bbca2b649ffb->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2d6982ed34888041e6a823140386415be24c9ec6aeb61f44629d0a96f4d8be5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:16.746409 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie de89bbca2b649ffb->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2d6982ed34888041e6a823140386415be24c9ec6aeb61f44629d0a96f4d8be5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:16.746446 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie f1f19ea2a3f2659b->b225f0273662d4ed: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:16.750399 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie de89bbca2b649ffb->dd63d28f5a33dd33: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(e4001eea0a75a2aae41ccb2c41f7277d9f4db2aff83aa49e57dcecbe04cfc072) )
+16:32:16.750402 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie de89bbca2b649ffb->dd63d28f5a33dd33: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(e4001eea0a75a2aae41ccb2c41f7277d9f4db2aff83aa49e57dcecbe04cfc072) )
+16:32:16.753077 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie de89bbca2b649ffb->dd63d28f5a33dd33: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:16.753812 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie de89bbca2b649ffb->dd63d28f5a33dd33: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:17.750700 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie de89bbca2b649ffb->dd63d28f5a33dd33: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:17.750715 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 890f68408c560442->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(36e33dab2bcae95824e853fd06b9630e35f806bd797b74885b3abb89d871cd57) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:17.750717 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 890f68408c560442->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(36e33dab2bcae95824e853fd06b9630e35f806bd797b74885b3abb89d871cd57) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:17.750753 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie de89bbca2b649ffb->dd63d28f5a33dd33: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:17.754709 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 890f68408c560442->0a59f555da34da35: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(750f146d4d3023fd964fdf9d53242fd3f0a57d10263953d9d13aabab05fce548) )
+16:32:17.754712 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 890f68408c560442->0a59f555da34da35: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(750f146d4d3023fd964fdf9d53242fd3f0a57d10263953d9d13aabab05fce548) )
+16:32:17.757410 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 890f68408c560442->0a59f555da34da35: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:17.758179 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 890f68408c560442->0a59f555da34da35: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:18.753794 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 890f68408c560442->0a59f555da34da35: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:18.753820 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 47bff17667970e52->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5a4bc4db9b057b562d100487501a5b0da7e1618cc7cef56f9e03eb013b48c662) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:18.753823 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 47bff17667970e52->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5a4bc4db9b057b562d100487501a5b0da7e1618cc7cef56f9e03eb013b48c662) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:18.753941 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 890f68408c560442->0a59f555da34da35: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:18.757868 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 47bff17667970e52->4fe827f6dccdfc4d: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(0664ba425aa8c5c104ef9edb2f39ae1642fb1acb5f37dd846fda6a16cac9f552) )
+16:32:18.757881 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 47bff17667970e52->4fe827f6dccdfc4d: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(0664ba425aa8c5c104ef9edb2f39ae1642fb1acb5f37dd846fda6a16cac9f552) )
+16:32:18.760572 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 47bff17667970e52->4fe827f6dccdfc4d: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:18.761378 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 47bff17667970e52->4fe827f6dccdfc4d: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:19.746935 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 47bff17667970e52->4fe827f6dccdfc4d: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:19.746961 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 41d09a7676c6e69f->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(7ce371a8cfe98c3a974698a240ef286571bce57142593ad7db80e17b79ae9073) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:19.746964 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 41d09a7676c6e69f->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(7ce371a8cfe98c3a974698a240ef286571bce57142593ad7db80e17b79ae9073) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:19.747061 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 47bff17667970e52->4fe827f6dccdfc4d: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:19.751002 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(c633ba8ae35ecd86a3676afacfff73b413163fbaab83a1bef30ebd5331f754f3) )
+16:32:19.751008 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(c633ba8ae35ecd86a3676afacfff73b413163fbaab83a1bef30ebd5331f754f3) )
+16:32:19.753705 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:19.754545 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:20.751084 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:20.751107 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie adf3840521063b26->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5ca950afe51a808d0e92d7b22ff78477f42bf8ed1c535820ef33b3fcf361ce0c) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:20.751110 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie adf3840521063b26->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5ca950afe51a808d0e92d7b22ff78477f42bf8ed1c535820ef33b3fcf361ce0c) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:20.751216 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 41d09a7676c6e69f->d0c02c0dc636c53e: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:20.755099 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie adf3840521063b26->2249f9287b9a219a: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(77363cc8f2b83ca99ada47442702372d0a16c499453c4ed54f8c22309d189953) )
+16:32:20.755103 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie adf3840521063b26->2249f9287b9a219a: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(77363cc8f2b83ca99ada47442702372d0a16c499453c4ed54f8c22309d189953) )
+16:32:20.757795 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie adf3840521063b26->2249f9287b9a219a: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:20.758557 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie adf3840521063b26->2249f9287b9a219a: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:21.754201 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie adf3840521063b26->2249f9287b9a219a: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:21.754226 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 337756679aee2231->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(acf526fba5b9c0c2cc28bdf9dafcb3e40e1bfbfa60fd79cc2e67fcf85a3f3515) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:21.754228 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 337756679aee2231->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(acf526fba5b9c0c2cc28bdf9dafcb3e40e1bfbfa60fd79cc2e67fcf85a3f3515) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:21.754254 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie adf3840521063b26->2249f9287b9a219a: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:21.758207 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 337756679aee2231->93febbff528f21b7: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(1eacb182450101a836382cea9a20af3d74c06262518a03f6567406ba33857c98) )
+16:32:21.758210 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 337756679aee2231->93febbff528f21b7: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(1eacb182450101a836382cea9a20af3d74c06262518a03f6567406ba33857c98) )
+16:32:21.760903 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 337756679aee2231->93febbff528f21b7: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:21.761677 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 337756679aee2231->93febbff528f21b7: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:22.748472 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 337756679aee2231->93febbff528f21b7: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:22.748497 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 707ff5a1d24ffdab->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f920cfd0506895001aadc7f14ef28df32941f693bcd7190dfc7125164b601990) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:22.748500 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 707ff5a1d24ffdab->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f920cfd0506895001aadc7f14ef28df32941f693bcd7190dfc7125164b601990) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:22.748596 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 337756679aee2231->93febbff528f21b7: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:22.752488 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(4dbc39d86c5bfdfbcb2ce577361874849e07021193c54a25507fdbbf6db08e9a) )
+16:32:22.752491 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(4dbc39d86c5bfdfbcb2ce577361874849e07021193c54a25507fdbbf6db08e9a) )
+16:32:22.755186 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:22.755950 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:23.751562 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:23.751592 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 5972c0084c6a0c8d->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(9bd806709f5db38fd31605024ff78ebc34226b180fd747c27395c708ee7a8e94) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:23.751594 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 5972c0084c6a0c8d->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(9bd806709f5db38fd31605024ff78ebc34226b180fd747c27395c708ee7a8e94) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:23.751669 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 707ff5a1d24ffdab->cc478d392a50c0bf: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:23.755642 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(661cac9f5d12f7a448978bc17340a89751fbc4a74c5caebd32a7f0cda695314c) )
+16:32:23.755654 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(661cac9f5d12f7a448978bc17340a89751fbc4a74c5caebd32a7f0cda695314c) )
+16:32:23.758348 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:23.759115 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:24.755689 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:24.755714 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 7f1a8bc76f51949e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(77207b0f142631bc1bcfd0ad119a3f7a434e0ea28a6d8d5b2b6468afe9d489d8) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:24.755716 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 7f1a8bc76f51949e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(77207b0f142631bc1bcfd0ad119a3f7a434e0ea28a6d8d5b2b6468afe9d489d8) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:24.755743 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 5972c0084c6a0c8d->fc8601ddf08f90d5: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:24.759750 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 7f1a8bc76f51949e->0758234f6dccc833: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2d1252054e47473e15e2b0021f8e7d3bdf0dbf1ee4b146db8904087b7a3ac7c2) )
+16:32:24.759763 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 7f1a8bc76f51949e->0758234f6dccc833: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2d1252054e47473e15e2b0021f8e7d3bdf0dbf1ee4b146db8904087b7a3ac7c2) )
+16:32:24.762451 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 7f1a8bc76f51949e->0758234f6dccc833: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:24.763212 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 7f1a8bc76f51949e->0758234f6dccc833: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:25.748835 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 7f1a8bc76f51949e->0758234f6dccc833: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:25.748859 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 980ed6dc68c52fc3->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2f8ca7bed51c07556e4b989be3fab980c7ef2954f8652a161d78f4269578e847) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:25.748861 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 980ed6dc68c52fc3->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(2f8ca7bed51c07556e4b989be3fab980c7ef2954f8652a161d78f4269578e847) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:25.748888 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 7f1a8bc76f51949e->0758234f6dccc833: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:25.752899 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(051e641ba811e7062b34c844a26ff51a5686c1fa348f5cdc7ceb55f43acf5402) )
+16:32:25.752912 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(051e641ba811e7062b34c844a26ff51a5686c1fa348f5cdc7ceb55f43acf5402) )
+16:32:25.755617 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:25.756407 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:26.751995 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:26.752018 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie be30660818e43c6e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(fa657193ad72c8ebd77daeb5b06aef5a3ad423d05fa1a2f46d255dc6ed9031f7) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:26.752021 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie be30660818e43c6e->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(fa657193ad72c8ebd77daeb5b06aef5a3ad423d05fa1a2f46d255dc6ed9031f7) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:26.752145 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 980ed6dc68c52fc3->0c8c66ad002f0b9e: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:26.756015 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie be30660818e43c6e->1b81d1ef90309199: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f532ec089096b14e4c745a709c0a9399f7c0dbd34b25fd19b58814436e621b2c) )
+16:32:26.756019 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie be30660818e43c6e->1b81d1ef90309199: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f532ec089096b14e4c745a709c0a9399f7c0dbd34b25fd19b58814436e621b2c) )
+16:32:26.758713 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie be30660818e43c6e->1b81d1ef90309199: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:26.759478 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie be30660818e43c6e->1b81d1ef90309199: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:27.746137 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie be30660818e43c6e->1b81d1ef90309199: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:27.746160 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 373a42e993736eb8->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(04bf36f18abded98edbd1e4cfec28bab225b55ed833e300f6b42f05888e7bd5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:27.746162 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 373a42e993736eb8->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(04bf36f18abded98edbd1e4cfec28bab225b55ed833e300f6b42f05888e7bd5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:27.746191 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie be30660818e43c6e->1b81d1ef90309199: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:27.750149 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 373a42e993736eb8->985e4864efac82a4: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(667ae94393d5b8a71584c3276a3800996fa1274608cb9f6562559c67502a5f95) )
+16:32:27.750152 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 373a42e993736eb8->985e4864efac82a4: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(667ae94393d5b8a71584c3276a3800996fa1274608cb9f6562559c67502a5f95) )
+16:32:27.752844 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 373a42e993736eb8->985e4864efac82a4: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:27.753611 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 373a42e993736eb8->985e4864efac82a4: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:28.749330 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 373a42e993736eb8->985e4864efac82a4: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:28.749357 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie a2c7e9e42ac41ff5->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5e2adaa18ae09d262e11a3d43f6a32684e19a2622dc29fcc15cbb9010a7fac5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:28.749358 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie a2c7e9e42ac41ff5->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(5e2adaa18ae09d262e11a3d43f6a32684e19a2622dc29fcc15cbb9010a7fac5b) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:28.749384 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie 373a42e993736eb8->985e4864efac82a4: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:28.753339 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie a2c7e9e42ac41ff5->323493496028d32e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f699a3c221177ea73314f5a9222c56d6d65f473d5b6941884699f03267087b17) )
+16:32:28.753342 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie a2c7e9e42ac41ff5->323493496028d32e: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(f699a3c221177ea73314f5a9222c56d6d65f473d5b6941884699f03267087b17) )
+16:32:28.756039 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie a2c7e9e42ac41ff5->323493496028d32e: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:28.756799 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie a2c7e9e42ac41ff5->323493496028d32e: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:29.753525 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie a2c7e9e42ac41ff5->323493496028d32e: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:29.753549 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie c3498db2ec45091f->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(31f05f1678cd257927de5632043ce4cd7bee61c1379c748b6d9707c2417002db) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:29.753551 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie c3498db2ec45091f->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(31f05f1678cd257927de5632043ce4cd7bee61c1379c748b6d9707c2417002db) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:29.753580 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie a2c7e9e42ac41ff5->323493496028d32e: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:29.757536 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie c3498db2ec45091f->45dd7ab19a61ab34: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(87bbaf05bf5140907066deb95bc3572bc5298132d16fe566bc81199bee3d8e93) )
+16:32:29.757538 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie c3498db2ec45091f->45dd7ab19a61ab34: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(87bbaf05bf5140907066deb95bc3572bc5298132d16fe566bc81199bee3d8e93) )
+16:32:29.760230 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie c3498db2ec45091f->45dd7ab19a61ab34: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:29.760997 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie c3498db2ec45091f->45dd7ab19a61ab34: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+16:32:30.746517 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000002 cookie c3498db2ec45091f->45dd7ab19a61ab34: child_sa  inf2[I]:
+    (v2e: len=44)
+16:32:30.746542 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 92dcf1843968138a->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(4625c69fe476198b88883c2bb1a46c000bfdd265443ab2753b8f84c20c0b510d) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:30.746544 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 490: (tos 0x0, ttl 254, id 0, offset 0, flags [none], proto UDP (17), length 476)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 92dcf1843968138a->0000000000000000: parent_sa ikev2_init[I]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(4625c69fe476198b88883c2bb1a46c000bfdd265443ab2753b8f84c20c0b510d) )
+    (n: prot_id=#0 type=16388(nat_detection_source_ip))
+    (n: prot_id=#0 type=16389(nat_detection_destination_ip))
+    (n: prot_id=#0 type=16431(status))
+16:32:30.746570 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 118: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 104)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000002 cookie c3498db2ec45091f->45dd7ab19a61ab34: child_sa  inf2[R]:
+    (v2e: len=44)
+16:32:30.750525 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 92dcf1843968138a->870abcce249b2a11: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(63d9086eaf47b5caeedeba63fb73ba7023423edc4c7735928215f11da1e57c43) )
+16:32:30.750527 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 418: (tos 0x0, ttl 251, id 0, offset 0, flags [none], proto UDP (17), length 404)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000000 cookie 92dcf1843968138a->870abcce249b2a11: parent_sa ikev2_init[R]:
+    (sa: len=44
+        (p: #1 protoid=isakmp transform=4 len=44
+            (t: #1 type=encr id=#20 (type=keylen value=0100))
+            (t: #2 type=integ id=hmac-sha )
+            (t: #3 type=prf id=#5 )
+            (t: #4 type=dh id=modp2048 )))
+    (v2ke: len=256 group=modp2048)
+    (nonce: len=32 nonce=(63d9086eaf47b5caeedeba63fb73ba7023423edc4c7735928215f11da1e57c43) )
+16:32:30.753220 24:6e:96:b4:b2:05 > 3c:fd:fe:1d:73:40, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 250, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    10.10.10.10.500 > 20.20.20.21.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 92dcf1843968138a->870abcce249b2a11: child_sa  ikev2_auth[I]:
+    (v2e: len=412)
+16:32:30.753986 3c:fd:fe:1d:73:40 > 24:6e:96:b4:b2:05, ethertype IPv4 (0x0800), length 486: (tos 0x0, ttl 247, id 0, offset 0, flags [none], proto UDP (17), length 472)
+    20.20.20.21.500 > 10.10.10.10.500: [no cksum] isakmp 2.0 msgid 00000001 cookie 92dcf1843968138a->870abcce249b2a11: child_sa  ikev2_auth[R]:
+    (v2e: len=412)
+^C
+152 packets captured
+152 packets received by filter
