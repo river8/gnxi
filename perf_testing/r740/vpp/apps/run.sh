@@ -1,3 +1,5 @@
+ip l set veth0 down
+ip l set veth0 addr 22:85:1f:20:06:d5
 ip a a 10.10.10.10/24 dev veth0
 ip r a default via 10.10.10.11 dev veth0
 ip l set veth0 up
