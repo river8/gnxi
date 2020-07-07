@@ -1,0 +1,34 @@
+set int state eth0 up
+set int ip address eth0 20.20.20.21/24
+ip route add 0.0.0.0/0 via 20.20.20.20
+
+create gre tunnel src 20.20.20.21 dst 10.10.10.10 teb
+comment{
+create gre tunnel src 20.20.20.21 dst 20.20.20.20 teb
+}
+
+comment{
+set int state eth1 up
+}
+create host-interface name veth0
+set int state host-veth0 up
+
+set interface l2 xconnect gre0 host-veth0
+set interface l2 xconnect host-veth0 gre0 
+comment{
+set interface l2 xconnect gre0 eth1
+set interface l2 xconnect eth1 gre0 
+}
+
+set ikev2 local key secrets/srv-2-key.pem
+ikev2 set liveness 30 4
+
+ikev2 profile add pr1
+ikev2 profile set pr1 tunnel gre0
+ikev2 profile set pr1 auth rsa-sig cert-file secrets/r440-cert.pem
+ikev2 profile set pr1 id remote fqdn r440
+ikev2 profile set pr1 id local fqdn srv-2
+ikev2 profile set pr1 traffic-selector remote ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
+ikev2 profile set pr1 traffic-selector local ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
+
+trace add dpdk-input 10
