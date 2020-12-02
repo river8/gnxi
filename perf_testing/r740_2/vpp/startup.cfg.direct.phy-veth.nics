@@ -1,0 +1,33 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+
+create gre tunnel src 10.10.10.11 dst 10.10.10.10 teb
+
+comment{
+set int state eth1 up
+
+set interface l2 xconnect gre0 eth1
+set interface l2 xconnect eth1 gre0 
+}
+
+create host-interface name veth0
+set int state host-veth0 up
+
+set interface l2 xconnect gre0 host-veth0
+set interface l2 xconnect host-veth0 gre0 
+
+set ikev2 local key secrets/srv-2-key.pem
+ikev2 set liveness 30 4
+
+ikev2 profile add pr1
+ikev2 profile set pr1 tunnel gre0
+ikev2 profile set pr1 auth rsa-sig cert-file secrets/r440-cert.pem
+ikev2 profile set pr1 id remote fqdn r440
+ikev2 profile set pr1 id local fqdn srv-2
+ikev2 profile set pr1 traffic-selector remote ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
+ikev2 profile set pr1 traffic-selector local ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
+
+trace add dpdk-input 10

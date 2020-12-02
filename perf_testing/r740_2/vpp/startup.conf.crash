@@ -1,0 +1,45 @@
+unix {
+  startup-config startup.cfg.crash
+  nodaemon
+  cli-no-banner
+  cli-no-pager
+  cli-prompt srv-2-vpp#
+  cli-listen /run/vpp/cli.sock
+  log vpp.log
+  full-coredump
+}
+
+cpu {
+  main-core 2
+  corelist-workers 4,6
+}
+
+dpdk {
+  socket-mem 2048,0
+  log-level debug
+  no-tx-checksum-offload
+  dev default{
+    num-tx-desc 512
+    num-rx-desc 512
+  }
+#  dev 0000:3b:00.2 {
+#    # pf of enp59s0f2, nat-t
+#    workers 1
+#    name eth0
+#  }
+  dev 0000:3b:00.1 {
+    # pf of enp59s0f1, direct
+    workers 1
+    name eth0
+  }
+  dev 0000:3b:00.3 {
+    # pf of enp59s0f3, ixia
+    workers 0
+    name eth1
+  }
+  no-multi-seg
+}
+
+statseg {
+  size 4G
+}

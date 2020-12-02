@@ -1,0 +1,11 @@
+set int state eth0 up
+set int ip address eth0 10.10.10.11/24
+
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+
+set int state eth1 up
+
+ikev2 set liveness 30 4
+
+trace add dpdk-input 10

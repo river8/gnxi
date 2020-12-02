@@ -1,18 +1,13 @@
 set int state eth0 up
 set int ip address eth0 10.10.10.11/24
 
+set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
+set acl-plugin interface eth0 output acl 0
+
 create gre tunnel src 10.10.10.11 dst 10.10.10.10 teb
 
 set int state eth1 up
-comment{
-create host-interface name veth0
-set int state host-veth0 up
-}
 
-comment{
-set interface l2 xconnect gre0 host-veth0
-set interface l2 xconnect host-veth0 gre0 
-}
 set interface l2 xconnect gre0 eth1
 set interface l2 xconnect eth1 gre0 
 
