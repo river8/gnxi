@@ -21,22 +21,26 @@ dpdk {
     num-rx-desc 512
     # num-rx-queues 2
   }
-#  dev 0000:3b:00.0 {
-#    # pf of enp59s0f0, nat-t
-#    workers 1
-#    name eth0
-#  }
-  dev 0000:3b:00.1 {
-    # pf of enp59s0f1, direct
+  dev 0000:3b:00.0 {
+    # pf of enp59s0f0, nat-t
     workers 1
     name eth0
   }
+#  dev 0000:3b:00.1 {
+#    # pf of enp59s0f1, direct
+#    workers 1
+#    name eth0
+#  }
   dev 0000:af:00.1 {
     # pf of enp175s0f1, ixia
     workers 0
     name eth1
   }
   no-multi-seg
+}
+
+ip {
+  heap-size 4G
 }
 
 statseg {

@@ -1,13 +1,16 @@
 set int state eth0 up
 set int ip address eth0 10.10.10.10/24
+ip route add 0.0.0.0/0 via 10.10.10.11
 
+comment{
 set acl-plugin acl deny src 0.0.0.0/0 dst 0.0.0.0/0 proto 47, permit src 0.0.0.0/0 dst 0.0.0.0/0 proto 0
 set acl-plugin interface eth0 output acl 0
+}
 
 comment{interface connected to ixia}
 set int state eth1 up
 
-create gre tunnel src 10.10.10.10 dst 10.10.10.11 teb
+create gre tunnel src 10.10.10.10 dst 20.20.20.21 teb
 
 create host-interface name veth1
 set int state host-veth1 up
@@ -32,7 +35,7 @@ ikev2 profile set pr1 id remote fqdn srv-2
 ikev2 profile set pr1 id local fqdn r440
 ikev2 profile set pr1 traffic-selector remote ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
 ikev2 profile set pr1 traffic-selector local ip-range 0.0.0.0-255.255.255.255 port-range 0 - 65535 protocol 0
-ikev2 profile set pr1 responder eth0 10.10.10.11
+ikev2 profile set pr1 responder eth0 20.20.20.21
 ikev2 profile set pr1 ike-crypto-alg aes-gcm-16 256 ike-integ-alg sha1-96 ike-dh modp-2048
 ikev2 profile set pr1 esp-crypto-alg aes-gcm-16 256 esp-integ-alg sha1-96 esp-dh ecp-256
 ikev2 profile set pr1 sa-lifetime 300 10 5 0
